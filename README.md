@@ -25,6 +25,7 @@ Software Requirements:
 9. Display the detected edges using Matplotlib.
 
 ### Program : 
+### Step 1: Import Libraries and Load the Image
 ```python
 import cv2
 import numpy as np
@@ -37,6 +38,7 @@ plt.imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
 plt.title('Original Image')
 plt.axis('on')
 ```
+### Step 2: Sobel Edge Detection
 ```python
 sobel_x = cv2.Sobel(gray_image, cv2.CV_64F, 1, 0, ksize=5)  # Sobel in x direction
 sobel_y = cv2.Sobel(gray_image, cv2.CV_64F, 0, 1, ksize=5)  # Sobel in y direction
@@ -45,12 +47,14 @@ plt.imshow(sobel_combined, cmap='gray')
 plt.title('Sobel Edge Detection')
 plt.axis('on')
 ```
+### Step 3: Laplacian Edge Detection
 ```python
 laplacian = cv2.Laplacian(gray_image, cv2.CV_64F)
 plt.imshow(laplacian, cmap='gray')
 plt.title('Laplacian Edge Detection')
 plt.axis('on')
 ```
+### Step 4: Canny Edge Detection
 ```python
 canny_edges = cv2.Canny(gray_image, 50, 150)
 plt.imshow(canny_edges, cmap='gray')
@@ -59,13 +63,13 @@ plt.axis('on')
 ```
 
 ### Output : 
-
+### Step 1: Original Image
 <img width="516" height="576" alt="image" src="https://github.com/user-attachments/assets/eab59efb-65b8-4608-81af-7b457f7a17bf" /></br>
-
+### Step 2: Sobel Edge Detection
 <img width="528" height="574" alt="image" src="https://github.com/user-attachments/assets/9c70fbed-7c65-4b26-afc2-f1b274a0e877" /></br>
-
+### Step 3: Laplacian Edge Detection
 <img width="535" height="580" alt="image" src="https://github.com/user-attachments/assets/b11b393c-197a-40c3-82c0-983adb445c32" /></br>
-
+### Step 4: Canny Edge Detection
 <img width="526" height="592" alt="image" src="https://github.com/user-attachments/assets/70ea6e84-41a2-4f23-aebf-62de6fcc57a2" /></br>
 
 
